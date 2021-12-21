@@ -7,7 +7,8 @@ while count != q
   operand1 = rand(100)
   operand2 = rand(100)
   answer = operand1 + operand2
-  print "Q#{count + 1}. #{operand1} + #{operand2} = "
+  fomula =  "Q#{count + 1}. #{operand1} + #{operand2} = "
+  print fomula
 
   input = gets.to_i
 
@@ -16,6 +17,7 @@ while count != q
   end
   while input != answer
     puts "not good..."
+    print fomula
     input = gets.to_i
   end
   puts "right!"
