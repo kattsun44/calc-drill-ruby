@@ -1,5 +1,13 @@
+print "Which One?\n"
+choice = 0
+
+while choice != 1 and choice != 2
+  print "Addition...1 Multiplication...2\n"
+  choice = Integer(gets)
+end
+
 print "How many do you want to solve?\n> "
-q = gets.to_i
+q = Integer(gets)
 count = 0
 miss = 0
 start_time = Time.now
@@ -7,11 +15,18 @@ start_time = Time.now
 while count != q
   operand1 = rand(100)
   operand2 = rand(100)
-  answer = operand1 + operand2
-  fomula =  "Q#{count + 1}. #{operand1} + #{operand2} = "
+  if choice == 1
+    category = "addition"
+    answer = operand1 + operand2
+    fomula =  "Q#{count + 1}. #{operand1} + #{operand2} = "
+  else
+    category = "multiplication"
+    answer = operand1 * operand2
+    fomula =  "Q#{count + 1}. #{operand1} * #{operand2} = "
+  end
   print fomula
 
-  input = gets.to_i
+  input = Integer(gets)
 
   if input == 0
     break
@@ -20,7 +35,7 @@ while count != q
     puts "not good..."
     miss += 1
     print fomula
-    input = gets.to_i
+    input = Integer(gets)
   end
   puts "right!"
   count += 1
@@ -31,6 +46,7 @@ solved_time = Time.now - start_time
 score_text = "Total: #{count}, Miss: #{miss}, Time: #{solved_time}s"
 puts "\nFinish!\n#{score_text}"
 
-File.open("history.txt", mode = "a") do |f|
+# === 結果を記録する === #
+File.open("history_#{category}.txt", mode = "a") do |f|
   f.write("[#{Time.now.floor}] #{score_text}\n")
 end
