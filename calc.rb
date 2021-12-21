@@ -7,7 +7,7 @@ while count != q
   operand1 = rand(100)
   operand2 = rand(100)
   answer = operand1 + operand2
-  print "Q#{count + 1}. #{operand1} + #{operand2} = ?\n> "
+  print "Q#{count + 1}. #{operand1} + #{operand2} = "
 
   input = gets.to_i
 
