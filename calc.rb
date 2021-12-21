@@ -10,6 +10,10 @@ while count != q
   print "Q#{count + 1}. #{operand1} + #{operand2} = ?\n> "
 
   input = gets.to_i
+
+  if input == 0
+    break
+  end
   while input != answer
     puts "not good..."
     input = gets.to_i
@@ -20,4 +24,7 @@ end
 
 solved_time = Time.now - start_time
 
-puts "Finish!\nTotal: #{count}, Time: #{solved_time}s"
+score_text = "Total: #{count}, Time: #{solved_time}s"
+puts "\nFinish!\n#{score_text}"
+
+puts "[#{Time.now.floor}] #{score_text}"
