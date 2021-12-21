@@ -47,6 +47,6 @@ score_text = "Total: #{count}, Miss: #{miss}, Time: #{solved_time}s"
 puts "\nFinish!\n#{score_text}"
 
 # === 結果を記録する === #
-File.open("history_#{category}.txt", mode = "a") do |f|
+File.open("#{category}_history.txt", mode = "a") do |f|
   f.write("[#{Time.now.floor}] #{score_text}\n")
 end
