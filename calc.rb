@@ -20,4 +20,4 @@ end
 
 solved_time = Time.now - start_time
 
-puts "Total: #{count}, Time: #{solved_time}s"
+puts "Finish!\nTotal: #{count}, Time: #{solved_time}s"
