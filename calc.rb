@@ -28,9 +28,6 @@ while count != q
 
   input = Integer(gets)
 
-  if input == 0
-    break
-  end
   while input != answer
     puts "not good..."
     miss += 1
