@@ -27,4 +27,6 @@ solved_time = Time.now - start_time
 score_text = "Total: #{count}, Time: #{solved_time}s"
 puts "\nFinish!\n#{score_text}"
 
-puts "[#{Time.now.floor}] #{score_text}"
+File.open("history.txt", mode = "a") do |f|
+  f.write("[#{Time.now.floor}] #{score_text}\n")
+end
