@@ -1,6 +1,7 @@
 print "How many do you want to solve?\n> "
 q = gets.to_i
 count = 0
+miss = 0
 start_time = Time.now
 
 while count != q
@@ -17,6 +18,7 @@ while count != q
   end
   while input != answer
     puts "not good..."
+    miss += 1
     print fomula
     input = gets.to_i
   end
@@ -26,7 +28,7 @@ end
 
 solved_time = Time.now - start_time
 
-score_text = "Total: #{count}, Time: #{solved_time}s"
+score_text = "Total: #{count}, Miss: #{miss}, Time: #{solved_time}s"
 puts "\nFinish!\n#{score_text}"
 
 File.open("history.txt", mode = "a") do |f|
